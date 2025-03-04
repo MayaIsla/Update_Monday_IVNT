@@ -23,7 +23,7 @@ with open('C:/Scripts/Monday/ivnt_encode.txt', 'rb') as monday_key:
   coded_string_ivnt = monday_key.read()
 ivnt_api__Key = base64.b64decode(coded_string_ivnt).decode('utf-8')
 
-monday_api__Key = ""
+
 api__URI = "https://api.monday.com/"
 monday_headers = {"Authorization" : monday_api__Key,  "API-Version" : "2023-04"}
 search_Query_Board_Items = 'query FindSubitem {boards(ids: 000000) {items_page(query_params: {rules: [{column_id: "name", compare_value: ["incident #"], operator: contains_text}]}) {items {id name}}}}'
